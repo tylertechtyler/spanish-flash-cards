@@ -1,0 +1,92 @@
+body {
+    background: rgb(249,2,2);
+    background: linear-gradient(90deg, rgba(249,2,2,1) 20%, rgba(255,248,0,0.9752275910364145) 25%, rgba(255,240,0,1) 75%, rgba(249,2,2,1) 80%);
+}
+.wrapper {
+    text-align: center;
+}
+.nav {
+    border: 2px solid black;
+    background-color: red;
+    list-style:none;
+    margin:0;
+    left: 0;
+    padding:0;
+    text-align:center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    font-weight: bold;
+    
+
+}
+.nav li{
+    
+    display: inline;
+}
+.nav a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: black;
+}
+a:hover {
+    color: yellow;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 120px;
+    
+    perspective: 1000px;
+    align-self: center;
+    justify-self: center;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  .flip-card-front {
+      background-image: url("fr.png");
+      background-size: contain;
+      background-color: rgb(248, 245, 245);
+      color: black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: x-large;
+  }
+  .flip-card-back {
+      background-image: url("br.png");
+      background-size: contain;
+      background-color: rgb(194, 23, 23);
+      color: black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: x-large;
+      transform: rotateY(180deg);
+  }
+
+  .grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-gap: 15px;
+  }
