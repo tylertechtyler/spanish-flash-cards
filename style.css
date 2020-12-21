@@ -80,7 +80,7 @@ a:hover {
       background-color: rgb(194, 23, 23);
       color: black;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-size: x-large;
+      font-size: large;
       transform: rotateY(180deg);
   }
 
