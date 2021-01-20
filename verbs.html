@@ -6,6 +6,18 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!--MODIFY THIS SCRIPT AND EACH DIVS ID SO THEY CAN BE REORDERED USING THIS FUNCTION-->
+  <script>
+    function reOrder() {
+      divOne = document.getElementById('#div1');
+      divTwo = document.getElementById('#div2');
+      divThree = document.getElementById('#div3');
+      container = divOne.parentNode;
+      container.appendChild(divTwo);
+      container.appendChild(divOne);
+      container.appendChild(divThree);
+  }
+  </script>
   
   <title>Spanish Flash Cards</title>
   
@@ -20,10 +32,15 @@
       <li><a class="nav-link" href="adjectives.html">Adjectives</a></li>
       <li><a class="nav-link" href="adverbs.html">Adverbs</a></li>
       <li><a class="nav-link" href="#nouns">Nouns</a></li>
+      
       </ul>
    
-
+    <div class="grid2">
+      <div class="button-house"><button class="button" onclick="reOrder()">Randomize!</button></div>
+    </div>
     <div class="grid">
+
+      
 
       <div class="flip-card">
         <div class="flip-card-inner">
