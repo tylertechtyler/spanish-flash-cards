@@ -48,6 +48,12 @@ a:hover {
     align-self: center;
     justify-self: center;
 }
+/*
+.flip-card:nth-of-type(2) {
+    
+    order: 1;
+}
+*/
 .flip-card-inner {
     position: relative;
     width: 100%;

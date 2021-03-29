@@ -8,16 +8,51 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <!--MODIFY THIS SCRIPT AND EACH DIVS ID SO THEY CAN BE REORDERED USING THIS FUNCTION-->
   <script>
-    function reOrder() {
-      divOne = document.getElementById('#div1');
-      divTwo = document.getElementById('#div2');
-      divThree = document.getElementById('#div3');
-      container = divOne.parentNode;
-      container.appendChild(divTwo);
-      container.appendChild(divOne);
-      container.appendChild(divThree);
-  }
+    /*THIS WILL CREATE AN ARRAY. WILL DISPLAY AN ALERT OF THAT ARRAY RANDOMIZED. let mod assigns a numeric value to each const div so that they can be ordered.
+    let mod = 1;
+    let mod2 = 2;
+    let mod3 = 3;
+    const div1 = parseInt(document.getElementById("div1")+ mod);
+    const div2 = parseInt(document.getElementById('div2')+ mod2);
+    const div3 = parseInt(document.getElementById('div3')+ mod3);
+    let verbs = [div1, div2, div3];
+    //let verbs = [1, 2, 3, 4, 5];
+    alert(verbs.sort((a,b) => 0.5 - Math.random()));
+    
+    /*let arrayShuffle = function(arr) {
+      let newPos,
+      temp;
+        
+      for (let i = arr.lenght - 1; i > 0; i--) {
+        newPos = Math.floor(Math.random() * (i + 1));
+        temp = arr[i];
+        arr[i] = arr[newPos];
+        arr[newPos] = temp;
+      }
+      return arr;
+    };
+    let newArray  = arrayShuffle(arry);
+    console.log(newArray);
+    let newArray2 = arrayShuffle(newArray);
+    console.log(newArray2);
+*/
+    
   </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  
+          integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f"
+  
+          crossorigin="anonymous">
+  </script>
+  <script src="rdmgrid.js"></script>
+  <script>
+    $('#btnsr').rdmGrid();
+  
+    
+   
+    
+  </script>
+  
   
   <title>Spanish Flash Cards</title>
   
@@ -32,17 +67,18 @@
       <li><a class="nav-link" href="adjectives.html">Adjectives</a></li>
       <li><a class="nav-link" href="adverbs.html">Adverbs</a></li>
       <li><a class="nav-link" href="#nouns">Nouns</a></li>
+      <button class="rg-btn" data-rg="btnsr">Randomize!</button>
       
       </ul>
    
-    <div class="grid2">
-      <div class="button-house"><button class="button" onclick="reOrder()">Randomize!</button></div>
-    </div>
-    <div class="grid">
+    
+      
+    
+    <div class="grid" id="btnsr">
 
       
 
-      <div class="flip-card" id="div#1">
+      <div class="flip-card" id="div1">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <h1>Abrir</h1>
@@ -53,7 +89,7 @@
         </div>
       </div>
 
-      <div class="flip-card" id="div#2">
+      <div class="flip-card" id="div2">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <h1>Aburrir</h1>
@@ -64,7 +100,7 @@
         </div>
       </div>
 
-      <div class="flip-card" id="div#3">
+      <div class="flip-card" id="div3">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <h1>Acabar</h1>
