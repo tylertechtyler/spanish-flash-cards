@@ -1,0 +1,118 @@
+body {
+    background: rgb(249,2,2);
+    background: linear-gradient(90deg, rgba(249,2,2,1) 20%, rgba(255,248,0,0.9752275910364145) 25%, rgba(255,240,0,1) 75%, rgba(249,2,2,1) 80%);
+}
+.wrapper {
+    text-align: center;
+}
+.nav {
+    border: 2px solid black;
+    background-color: red;
+    list-style:none;
+    margin:0;
+    left: 0;
+    padding:0;
+    text-align:center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    font-weight: bold;
+    
+
+}
+.nav li{
+    
+    display: inline;
+}
+.nav a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: black;
+}
+a:hover {
+    color: yellow;
+}
+
+.flipcard {
+    background-color: transparent;
+    width: 300px;
+    height: 120px;
+    
+    perspective: 1000px;
+    align-self: center;
+    justify-self: center;
+}
+/*
+.flip-card:nth-of-type(2) {
+    
+    order: 1;
+}
+*/
+.flipcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flipcard:hover .flipcard-inner {
+    transform: rotateY(180deg);
+}
+.flipcard-front, .flipcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  .flipcard-front {
+      background-image: url("fr.png");
+      background-size: contain;
+      background-color: rgb(248, 245, 245);
+      color: black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: x-large;
+  }
+  .flipcard-back {
+      background-image: url("br.png");
+      background-size: contain;
+      background-color: rgb(194, 23, 23);
+      color: black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: large;
+      transform: rotateY(180deg);
+  }
+
+  .grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-gap: 15px;
+  }
+  .grid2 {
+    margin-top: 60px;
+    margin-bottom: -20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 15px;
+  }
+  .button-house button {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: large;
+      background-image: url("br.png");
+      background-size: contain;
+      box-shadow: 0 0 5px 1px rgb(155, 155, 155);
+      padding: 20px;
+      width: 300px;
+  }
+  .button-house button:hover {
+    box-shadow: 0 0 10px 1px red; 
+    color: yellow;
+}

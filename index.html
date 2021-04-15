@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+
+            <div class="nav">
+                <h1 class="titletext">Spanish Verb Flash Cards!</h1>
+                <div class="buttontext">
+                <label for="orderby">Order by:</label>
+                    <select name="orderby" id="orderby">
+                    <option value="Alphabetical">Alphabetical</option>
+                    <option value="Translation">Translation</option>
+                    <option value="How Well I Know">How Well I Know</option>
+                    </select>
+                </div>
+                    
+            </div>
+
+    <!--START GRID ITEMS HERE-->       
+
+        <div id="maingrid">
+
+            <!--los verbos que empiezan por "A" comienzan aquí-->
+
+            <flipcard itemscope itemtype="indexcard">
+                <div class="flipcardinner">
+                <div class="flipcardfront">
+                <h1 itemprop="name">Abrir</h1>
+                </div>
+                <div class="flipcardback">
+                    <h1 itemprop="Translation">to open</h1>
+                    <time itemprop="How Well I Know">0973</time>
+                    <a href="https://www.spanishdict.com/conjugate/abrir" target="_blank">View Conjugations</a>
+                </div>
+                </div>
+            </flipcard>
+
+            <flipcard itemscope itemtype="indexcard">
+                <div class="flipcardinner">
+                <div class="flipcardfront">
+                <h1 itemprop="name">Aburrir</h1>
+                </div>
+                <div class="flipcardback">
+                    <h1 itemprop="Translation">to bore</h1>
+                    <time itemprop="How Well I Know">0733</time>
+                    <a href="https://www.spanishdict.com/conjugate/aburrir" target="_blank">View Conjugations</a>
+                </div>
+                </div>
+            </flipcard>
+
+            <flipcard itemscope itemtype="indexcard">
+                <div class="flipcardinner">
+                <div class="flipcardfront">
+                <h1 itemprop="name">Acabar</h1>
+                </div>
+                <div class="flipcardback">
+                    <h1 itemprop="Translation">to finish</h1>
+                    <time itemprop="How Well I Know">0013</time>
+                    <a href="https://www.spanishdict.com/conjugate/acabar" target="_blank">View Conjugations</a>
+                </div>
+                </div>
+            </flipcard>
+
+            <flipcard itemscope itemtype="indexcard">
+                <div class="flipcardinner">
+                <div class="flipcardfront">
+                <h1 itemprop="name"></h1>
+                </div>
+                <div class="flipcardback">
+                    <h1 itemprop="Translation"></h1>
+                    <time itemprop="How Well I Know"></time>
+                    <a href="" target="_blank">View Conjugations</a>
+                </div>
+                </div>
+            </flipcard>
+
+            <flipcard itemscope itemtype="indexcard">
+                <div class="flipcardinner">
+                <div class="flipcardfront">
+                <h1 itemprop="name"></h1>
+                </div>
+                <div class="flipcardback">
+                    <h1 itemprop="Translation"></h1>
+                    <time itemprop="How Well I Know"></time>
+                </div>
+                </div>
+            </flipcard>
+
+            <flipcard itemscope itemtype="indexcard">
+                <div class="flipcardinner">
+                <div class="flipcardfront">
+                <h1 itemprop="name"></h1>
+                </div>
+                <div class="flipcardback">
+                    <h1 itemprop="Translation"></h1>
+                    <time itemprop="How Well I Know"></time>
+                </div>
+                </div>
+            </flipcard>
+    
+         </div>
+
+    <!--END GRID ITEMS HERE-->
+
+    </div>
+
+    <script>
+            var Alphabetical = document.getElementById("orderby"),
+            cards = document.getElementById("maingrid"),
+            flipcards = cards.querySelectorAll("flipcard"),
+            original = cards.innerHTML;
+        function sortUs(parent, child, key) {
+	        var items = Array.prototype.slice.call(document.querySelectorAll(parent + " " + child)).sort(function(a, b) {
+		    var comparA = a.querySelector(key).innerHTML;
+		    var comparB = b.querySelector(key).innerHTML;
+		return (comparA < comparB) ? -1 : (comparA > comparB) ? 1 : 0;
+	});
+	for (var i = 0; i < flipcards.length; i++) {
+		cards.appendChild(items[i]);
+	    }
+    }
+    Alphabetical.onchange = function(){ 
+	if (Alphabetical.value == "Alphabetical") { 
+		cards.innerHTML = original;
+	} else {
+		if (Alphabetical.value == "Translation") { 
+			el = "h1[itemprop=Translation]"; 
+		}
+	if (Alphabetical.value == "How Well I Know") {
+		el = "time"; 
+	}
+	sortUs("#maingrid","flipcard",el);
+    }}
+    </script>
+
+    </body>
+
+</html>
